@@ -16,8 +16,16 @@ class Main extends PluginBase {
         self::$instance = $this;
         $this->saveDefaultConfig();
 
+        // Garante que a subpasta data/ exista antes de criar o Config
+        $dataFolder = $this->getDataFolder();
+        $playersDir = $dataFolder . "data/";
+        if (!is_dir($playersDir)) {
+            // Usa @ para suprimir avisos em caso de condições de corrida/permissão
+            @mkdir($playersDir, 0777, true);
+        }
+
         // Dados de jogadores (last death, cooldowns)
-        $this->playerData = new Config($this->getDataFolder() . "data/players.yml", Config::YAML);
+        $this->playerData = new Config($playersDir . "players.yml", Config::YAML);
 
         // Inicializa o Gerenciador de Túmulos
         $this->graveManager = new GraveManager($this);
