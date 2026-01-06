@@ -1,0 +1,34 @@
+# ==========================================
+#         SAFE RETURN - CONFIGURAÇÃO
+# ==========================================
+
+settings:
+  enable: true
+  # Bloco usado para o túmulo (ID de string, ex: chest, barrel, stone)
+  grave_block: "chest"
+  # Tempo em segundos para o túmulo expirar (600 = 10 minutos)
+  expire_time: 600
+  # O que fazer quando expirar? (drop = cair no chão, delete = sumir)
+  expire_action: "drop"
+  # Desativar túmulos em PvP? (Se morrer para player, dropa normal)
+  disable_in_pvp: false
+  # Mundos onde o sistema NÃO funciona
+  disabled_worlds:
+    - "spawn"
+
+back_death:
+  enable: true
+  cooldown: 300 # Segundos (5 minutos)
+  cost_xp: 0 # Custo em níveis de XP (0 para desativar)
+  cost_money: 0 # Requer plugin de economia (0 para desativar)
+
+messages:
+  prefix: "§l§3Safe§bReturn §r§8» §7"
+  grave_created: "§eVocê morreu! Um túmulo foi criado em §b{X}, {Y}, {Z}§e."
+  grave_expire_warning: "§cSeu túmulo irá expirar em {TIME} segundos!"
+  grave_claimed: "§aVocê recuperou seus itens com sucesso."
+  not_yours: "§cEste túmulo pertence a §e{PLAYER}§c."
+  back_success: "§aTeleportado para o local da morte."
+  back_cooldown: "§cAguarde §e{TIME}s §cpara usar este comando novamente."
+  back_no_death: "§cVocê não possui um local de morte registrado."
+  inventory_full: "§eSeu inventário estava cheio. Alguns itens caíram no chão."

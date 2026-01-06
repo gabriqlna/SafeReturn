@@ -1,0 +1,12 @@
+name: SafeReturn
+version: 1.0.0
+main: br\com\safereturn\Main
+api: [5.0.0]
+author: gabriqlna
+permissions:
+  safereturn.back:
+    default: true
+    description: "Permite usar o comando /backdeath"
+  safereturn.admin:
+    default: op
+    description: "Permite gerenciar o plugin"
